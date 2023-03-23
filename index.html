@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trouvez la meilleure offre</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="main-container" class="container">
+    <div id="search-container">
+      <label class="search-wrapper">
+        <input type="text" id="search" placeholder="Rechercher un produit">
+        <span class="search-icon"></span>
+      </label>
+    </div>
+    <div id="results"></div>
+  </div>
+  <script defer>
+    async function loadProducts() {
+      try {
+        const response = await fetch('products.json');
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error('Erreur lors du chargement des produits :', error);
+        return [];
+      }
+    }
+
+    function createImageElement(src, alt, width) {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = alt;
+      img.style.width = `${width}px`;
+      return img;
+    }
+
+    function createImage(product, index) {
+      const image = createImageElement(product[`image${index}`], product.name, 80);
+      if (product[`link${index}`]) {
+        const link = document.createElement('a');
+        link.href = product[`link${index}`];
+        link.target = '_blank';
+        link.appendChild(image);
+        return link;
+      }
+      return image;
+    }
+
+    function displayResults(products, searchTerm) {
+      const resultsContainer = document.getElementById("results");
+      resultsContainer.innerHTML = '';
+
+      const matchingProducts = products.filter(product =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
+      if (matchingProducts.length === 0) {
+        const noResults = document.createElement('p');
+        noResults.textContent = 'Aucun produit trouvé.';
+        resultsContainer.appendChild(noResults);
+        return;
+      }
+
+      matchingProducts.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'products';
+
+        const productName = document.createElement('h2');
+        productName.textContent = product.name;
+        productDiv.appendChild(productName);
+
+        const productImage = createImageElement(product.image, product.name, 140);
+        productDiv.appendChild(productImage);
+
+        const productDescription = document.createElement('p');
+        productDescription.textContent = product.description;
+        productDiv.appendChild(productDescription);
+
+        for (let i = 1; i <= 5; i++) {
+          productDiv.appendChild(createImage(product, i));
+        }
+
+        resultsContainer.appendChild(productDiv);
+      });
+    }
+
+    async function main() {
+      const products = await loadProducts();
+      const searchInput = document.getElementById("search");
+      const mainContainer = document.getElementById("main-container");
+
+      searchInput.addEventListener("input", () => {
+        const searchTerm = searchInput.value.trim();
+        if (searchTerm === "") {
+          mainContainer.classList.remove("top");
+          document.getElementById("results").innerHTML = "";
+          return;
+        }
+
+        mainContainer.classList.add("top");
+        displayResults(products, searchTerm);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", main);
+  </script>
+</body>
+</html>
