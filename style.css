@@ -12,10 +12,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   position: relative;
-  transform: translateY(-10%); /* Ajustez cette valeur pour déplacer le contenu vers le haut */
 }
-
-
 
 .container.top {
   justify-content: flex-start;
