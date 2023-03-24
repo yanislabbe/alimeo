@@ -101,27 +101,40 @@
       }
     }
 
+    function toggleRaise(searchTerm) {
+      const mainContainer = document.getElementById("main-container");
+    
+      if (searchTerm === "") {
+        mainContainer.classList.add("raise");
+      } else {
+        mainContainer.classList.remove("raise");
+      }
+    }
+    
     async function main() {
       const products = await loadProducts();
       const searchInput = document.getElementById("search");
-      const mainContainer = document.getElementById("main-container");
     
       searchInput.addEventListener("input", () => {
         const searchTerm = searchInput.value.trim();
         toggleLogoVisibility(searchTerm);
+        toggleRaise(searchTerm);
     
         if (searchTerm === "") {
-          mainContainer.classList.remove("top");
+          document.getElementById("main-container").classList.remove("top");
           document.getElementById("results").innerHTML = "";
           return;
         }
     
-        mainContainer.classList.add("top");
+        document.getElementById("main-container").classList.add("top");
         displayResults(products, searchTerm);
       });
+    
+      toggleRaise(""); // Initialiser la position du logo et de la barre de recherche
     }
     
     document.addEventListener("DOMContentLoaded", main);
+    
   </script>
 </body>
 </html>

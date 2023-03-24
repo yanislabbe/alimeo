@@ -14,6 +14,10 @@ body {
   position: relative;
 }
 
+.container.raise {
+  transform: translateY(-10%);
+}
+
 .container.top {
   justify-content: flex-start;
   padding-top: 0;
