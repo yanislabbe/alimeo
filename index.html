@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Trouvez la meilleure offre</title>
+  <title>Alimeo</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div id="main-container" class="container">
     <div id="search-container">
+      <div class="logo-container">
+        <img src="alimeo.png" alt="Logo de votre entreprise">
+      </div>
+      <br />
       <label class="search-wrapper">
         <input type="text" id="search" placeholder="Rechercher un produit">
         <span class="search-icon"></span>
@@ -84,24 +88,39 @@
       });
     }
 
+    function toggleLogoVisibility(searchTerm) {
+      const logoContainer = document.querySelector(".logo-container");
+      const mainContainer = document.getElementById("main-container");
+      
+      if (searchTerm === "") {
+        logoContainer.style.display = "flex";
+        mainContainer.classList.remove("top");
+      } else {
+        logoContainer.style.display = "none";
+        mainContainer.classList.add("top");
+      }
+    }
+
     async function main() {
       const products = await loadProducts();
       const searchInput = document.getElementById("search");
       const mainContainer = document.getElementById("main-container");
-
+    
       searchInput.addEventListener("input", () => {
         const searchTerm = searchInput.value.trim();
+        toggleLogoVisibility(searchTerm);
+    
         if (searchTerm === "") {
           mainContainer.classList.remove("top");
           document.getElementById("results").innerHTML = "";
           return;
         }
-
+    
         mainContainer.classList.add("top");
         displayResults(products, searchTerm);
       });
     }
-
+    
     document.addEventListener("DOMContentLoaded", main);
   </script>
 </body>
