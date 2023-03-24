@@ -28,6 +28,11 @@ body {
   top: 0;
   background-color: white;
   z-index: 1000;
+  border-top: 10px solid #ffffff; /* Changement de la couleur et de l'épaisseur de la bordure */
+}
+
+.container.top #search-container.hide-border {
+  border-top: none; /* Masquer la bordure lorsqu'il n'y a pas de recherche */
 }
 
 .logo-container {
@@ -38,8 +43,8 @@ body {
 }
 
 .logo-container img {
-  max-height: 100px;
-  max-width: 100%;
+  max-height: 118px;
+  max-width: 118%;
 }
 
 .search-container {
