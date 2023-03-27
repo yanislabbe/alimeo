@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrer un nouveau produit</title>
+  <link rel="stylesheet" href="css/addproduct.css">
+</head>
+<body>
+  <h1>Entrer un nouveau produit</h1>
+  <form id="product-form">
+    <div class="column">
+    <label for="name">Nom du produit:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" value="0$ (0$/100g)" required>
+    <label for="image">Lien vers l'image du produit:</label>
+    <input type="text" id="image" name="image" value="img/product/" required>
+    <label for="convert">Convertir une image en jpg:</label>
+    <input type="file" id="convert" name="convert" accept="image/*">
+    </div>
+    <div class="column">
+    <label for="link1">Lien vers Super C:</label>
+    <input type="text" id="link1" name="link1">
+    <label for="link2">Lien vers Walmart:</label>
+    <input type="text" id="link2" name="link2">
+    <label for="link3">Lien vers IGA:</label>
+    <input type="text" id="link3" name="link3">
+    <label for="link4">Lien vers Maxi:</label>
+    <input type="text" id="link4" name="link4">
+    <label for="link5">Lien vers Metro:</label>
+    <input type="text" id="link5" name="link5">
+    </div>
+    <input type="submit" value="Ajouter">
+  </form>
+  <button id="download-data">Télécharger les données</button>
+  <script src="js/addproduct.js" defer></script>
+</body>
+</html>
