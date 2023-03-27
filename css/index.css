@@ -121,3 +121,8 @@ body {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); /* Modifier l'ombre au survol */
   background-color: #ffffff; /* Changer la couleur de fond au survol */
 }
+
+.products img {
+  border-radius: 12px;
+  margin-right: 1px;
+}
