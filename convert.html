@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversion d'image</title>
+    <link rel="stylesheet" type="text/css" href="css/convert.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Convertisseur d'images en ligne</h1>
+        <p>Convertir des fichiers image de tous les formats en ligne</p>
+        <br />
+        <input type="file" id="uploadImage" accept="image/*">
+        <label for="uploadImage">Choisir une image</label>
+        <div class="select-container">
+            <label for="outputFormat">Format de sortie :</label>
+            <select id="outputFormat">
+                <option value="image/jpg">JPG</option>
+                <option value="image/jpeg">JPEG</option>
+                <option value="image/png">PNG</option>
+                <option value="image/webp">WebP</option>
+                <option value="image/gif">GIF</option>
+                <option value="image/bmp">BMP</option>
+                <option value="image/tiff">TIFF</option>
+                <option value="image/svg+xml">SVG</option>
+                <option value="image/ico">ICO</option>
+                <option value="image/x-icon">X-Icon</option>
+                <option value="image/vnd.microsoft.icon">Microsoft Icon</option>
+            </select>
+        </div>
+        <img id="sourceImage" style="display:none;" alt="Image à convertir">
+        <br />
+        <input type="text" id="imageName" placeholder="Nom de l'image">
+        <div class="download-container">
+            <button id="convertButton">Convertir et télécharger</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-toBlob/1.0.0/canvas-toBlob.min.js"></script>
+    <script src="js/convert.js" defer></script>
+</body>
+
+</html>

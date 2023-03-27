@@ -28,11 +28,11 @@ body {
   top: 0;
   background-color: white;
   z-index: 1000;
-  border-top: 10px solid #ffffff; /* Changement de la couleur et de l'épaisseur de la bordure */
+  border-top: 10px solid #ffffff;
 }
 
 .container.top #search-container.hide-border {
-  border-top: none; /* Masquer la bordure lorsqu'il n'y a pas de recherche */
+  border-top: none;
 }
 
 .logo-container {
