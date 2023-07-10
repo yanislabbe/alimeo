@@ -1,7 +1,22 @@
 [
   {
+    "name": "Compliments Fromage Suisse Tranché 150 g",
+    "description": "Régulier 5,99 $ (3,99 $ / 100 G.)",
+    "image": "image/product/compliments-fromage-suisse-en-tranche-150-g.jpg",
+    "image1": "img/grocery/super-c.jpg",
+    "image2": "img/grocery/walmart-x.jpg",
+    "image3": "img/grocery/iga.jpg",
+    "image4": "img/grocery/maxi.jpg",
+    "image5": "img/grocery/metro.jpg",
+    "link1": "",
+    "link2": "",
+    "link3": "https://www.iga.net/fr/produit/fromagesuisse-tranche/00000_000000005574255915",
+    "link4": "",
+    "link5": ""
+  },
+  {
     "name": "P'tit Québec Fromage Suisse En Tranches 220 g",
-    "description": "IGA: Régulier 7,99 $ (3,63 $ / 100 G.)",
+    "description": "Régulier 7,99 $ (3,63 $ / 100 G.)",
     "image": "image/ptit-quebec/ptit-quebec-fromage-suisse-en-tranches-220-g.jpg",
     "image1": "img/grocery/super-c.jpg",
     "image2": "img/grocery/walmart-x.jpg",
@@ -47,7 +62,7 @@
   {
     "name": "Compliments Fromage Suisse Tranché 440 g",
     "description": "Régulier 14,99 $ (3,41 $ / 100 G.)",
-    "image": "image/product/compliments-fromage-suisse-en-tranches-440-g.jpg",
+    "image": "image/product/compliments-fromage-suisse-en-tranche-440-g.jpg",
     "image1": "img/grocery/super-c.jpg",
     "image2": "img/grocery/walmart-x.jpg",
     "image3": "img/grocery/iga.jpg",
